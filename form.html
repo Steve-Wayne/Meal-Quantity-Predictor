@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="head">Restaurant Food Consumption Prediction</h1>
+    <form method="post" action="http://127.0.0.1:5000/predict">
+        <select name="restaurant" required>
+            <option value="" disabled selected>Select a Restaurant</option>
+            <option value="Punjabi Dhaba Sector 35 Chandigarh">Punjabi Dhaba Sector 35 Chandigarh</option>
+            <option value="Katani Dhaba Sector35 D Chandigarh">Katani Dhaba Sector35 D Chandigarh</option>
+            <option value="Swagath Restaurant and Bar">Swagath Restaurant and Bar</option>
+            <option value="Ghazal Restaurant Sector 17">Ghazal Restaurant Sector 17</option>
+            <option value="Sankalp Vegetarian Restaurant">Sankalp Vegetarian Restaurant</option>
+            <option value="Pirates of Grill Sector-17">Pirates of Grill Sector-17</option>
+        </select>
+        <br> <!-- Add a line break for spacing -->
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
