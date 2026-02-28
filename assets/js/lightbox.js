@@ -222,6 +222,17 @@
     var dataLightboxValue = $link.attr('data-lightbox');
     var $links;
 
+if (dataLightboxValue) {
+      $links = $($link.prop('tagName') + '[data-lightbox="' + $.escapeSelector(dataLightboxValue) + '"]');
+      for (var i = 0; i < $links.length; i = ++i) {
+// AI FIX START
+        var link = $($links[i]);
+        var sanitizedLink = $('<div>').text(link.text()).html();
+        addToAlbum($(sanitizedLink));
+// AI FIX END
+        if ($links[i] === $link[0]) {
+          imageNumber = i;
+        }
     if (dataLightboxValue) {
       $links = $($link.prop('tagName') + '[data-lightbox="' + dataLightboxValue + '"]');
       for (var i = 0; i < $links.length; i = ++i) {
