@@ -5794,7 +5794,7 @@ function remove( elem, selector, keepData ) {
 jQuery.extend( {
 	htmlPrefilter: function( html ) {
 		// AI FIX START
-return html;
+return DOMPurify.sanitize(html);
 // AI FIX END
 	},
 
