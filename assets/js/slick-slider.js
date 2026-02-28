@@ -1488,7 +1488,9 @@ image.attr('src', "" + encodeURIComponent(imageSource) +"")
 
                 };
 
-                imageToLoad.src = imageSource;
+                // AI FIX START
+imageToLoad.src = "" + encodeURIComponent(imageSource);
+// AI FIX END
 
             });
 
