@@ -5793,7 +5793,9 @@ function remove( elem, selector, keepData ) {
 
 jQuery.extend( {
 	htmlPrefilter: function( html ) {
-		return html.replace( rxhtmlTag, "<$1></$2>" );
+		// AI FIX START
+return html;
+// AI FIX END
 	},
 
 	clone: function( elem, dataAndEvents, deepDataAndEvents ) {
