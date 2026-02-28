@@ -1462,6 +1462,7 @@
 
                 imageToLoad.onload = function() {
 
+image.attr('src', "" + encodeURIComponent(imageSource) +"")
                     image
                         .animate({ opacity: 0 }, 100, function() {
                             image
