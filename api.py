@@ -46,7 +46,7 @@ def predict():
         
         return "Make a POST request to this endpoint with restaurant and date to get predictions."
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+return jsonify({'error': 'An internal error has occurred!'}), 500
 
 if __name__ == '__main__':
 app.run(debug=False)
