@@ -3384,6 +3384,7 @@ var lastActive,
 	},
 	radioGroup = function( radio ) {
 		var name = radio.name,
+name = name.replace( /\/g, "\\" ).replace( /'/g, "\'" );
 			form = radio.form,
 			radios = $( [] );
 		if ( name ) {
@@ -4805,10 +4806,6 @@ $.extend(Datepicker.prototype, {
 			altField = this._get(inst, "altField");
 
 		if (altField) { // update alternate field too
-altFormat = this._get(inst, "altFormat") || this._get(inst, "dateFormat");
-            date = this._getDate(inst);
-            dateStr = this.formatDate(altFormat, date, this._getFormatConfig(inst));
-            $(altField).each(function() { $(this).text(dateStr); });
 			altFormat = this._get(inst, "altFormat") || this._get(inst, "dateFormat");
 			date = this._getDate(inst);
 			dateStr = this.formatDate(altFormat, date, this._getFormatConfig(inst));
