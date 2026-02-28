@@ -1443,9 +1443,7 @@
 				element.css('opacity', 1);
 				this.leave('pre-loading');
 				!this.is('pre-loading') && !this.is('initializing') && this.refresh();
-			// AI FIX START
-}, this)).attr('src', $.text(element.attr('src') || element.attr('data-src') || element.attr('data-src-retina')));
-// AI FIX END
+			}, this)).attr('src', element.attr('src') || element.attr('data-src') || element.attr('data-src-retina'));
 		}, this));
 	};
 
@@ -1981,10 +1979,13 @@ $element.one('load.owl.lazy', $.proxy(function() {
 // AI FIX START
                 }, this)).attr('src', encodeURIComponent(url));
 // AI FIX END
-				$element.one('load.owl.lazy', $.proxy(function() {
-					$element.css('opacity', 1);
-					this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
-				}, this)).attr('src', url);
+				// AI FIX START
+$element.one('load.owl.lazy', $.proxy(function() {
+                    $element.css('opacity', 1);
+                    this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
+
+                }, this)).attr('src', encodeURIComponent(url));
+// AI FIX END
             } else if ($element.is('source')) {
                 $element.one('load.owl.lazy', $.proxy(function() {
                     this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
