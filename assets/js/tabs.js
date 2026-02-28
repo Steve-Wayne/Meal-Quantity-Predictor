@@ -3384,7 +3384,6 @@ var lastActive,
 	},
 	radioGroup = function( radio ) {
 		var name = radio.name,
-name = name.replace( /\/g, "\\" ).replace( /'/g, "\'" );
 			form = radio.form,
 			radios = $( [] );
 		if ( name ) {
@@ -4521,6 +4520,7 @@ $.extend(Datepicker.prototype, {
 			"static" : (isFixed ? "fixed" : "absolute")), display: "none",
 			left: offset.left + "px", top: offset.top + "px"});
 
+inst.dpDiv.css("z-index", \"\" + parseInt(datepicker_getZindex($(input))) + 1);
 		if (!inst.inline) {
 			showAnim = $.datepicker._get(inst, "showAnim");
 			duration = $.datepicker._get(inst, "duration");
