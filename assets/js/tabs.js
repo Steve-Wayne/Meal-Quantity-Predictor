@@ -4520,7 +4520,6 @@ $.extend(Datepicker.prototype, {
 			"static" : (isFixed ? "fixed" : "absolute")), display: "none",
 			left: offset.left + "px", top: offset.top + "px"});
 
-inst.dpDiv.css("z-index", \"\" + parseInt(datepicker_getZindex($(input))) + 1);
 		if (!inst.inline) {
 			showAnim = $.datepicker._get(inst, "showAnim");
 			duration = $.datepicker._get(inst, "duration");
@@ -14524,6 +14523,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 			over = ($(ce).css("overflow") !== "hidden");
 
 			this.containment = [
+co.left + (parseInt($(ce).css("borderLeftWidth"),10) || 0) + (parseInt($(ce).css("paddingLeft"),10) || 0) - this.margins.left, co.top + (parseInt($(ce).css("borderTopWidth"),10) || 0) + (parseInt($(ce).css("paddingTop"),10) || 0) - this.margins.top, co.left+(over ? Math.max(ce.scrollWidth,ce.offsetWidth) : ce.offsetWidth) - (parseInt($(ce).css("borderLeftWidth"),10) || 0) - (parseInt($(ce).css("paddingRight"),10) || 0) - this.helperProportions.width - this.margins.left, co.top+(over ? Math.max(ce.scrollHeight,ce.offsetHeight) : ce.offsetHeight) - (parseInt($(ce).css("borderTopWidth"),10) || 0) - (parseInt($(ce).css("paddingBottom"),10) || 0) - this.helperProportions.height - this.margins.top
 				co.left + (parseInt($(ce).css("borderLeftWidth"),10) || 0) + (parseInt($(ce).css("paddingLeft"),10) || 0) - this.margins.left,
 				co.top + (parseInt($(ce).css("borderTopWidth"),10) || 0) + (parseInt($(ce).css("paddingTop"),10) || 0) - this.margins.top,
 				co.left+(over ? Math.max(ce.scrollWidth,ce.offsetWidth) : ce.offsetWidth) - (parseInt($(ce).css("borderLeftWidth"),10) || 0) - (parseInt($(ce).css("paddingRight"),10) || 0) - this.helperProportions.width - this.margins.left,
