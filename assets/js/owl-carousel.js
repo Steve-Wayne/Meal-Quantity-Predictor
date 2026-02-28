@@ -1973,6 +1973,12 @@
 			this._core.trigger('load', { element: $element, url: url }, 'lazy');
 
 			if ($element.is('img')) {
+$element.one('load.owl.lazy', $.proxy(function() {
+                    $element.css('opacity', 1);
+                    this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
+// AI FIX START
+                }, this)).attr('src', encodeURIComponent(url));
+// AI FIX END
 				$element.one('load.owl.lazy', $.proxy(function() {
 					$element.css('opacity', 1);
 					this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
